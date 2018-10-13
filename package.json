@@ -4,7 +4,12 @@
   "description": "Minimum workspace template for a SPA",
   "author": "Alex Moros Marco",
   "license": "ISC",
+  "scripts": {
+    "serve": "grunt connect",
+    "default": "grunt default"
+  },
   "devDependencies": {
-    "grunt": "^1.0.3"
+    "grunt": "^1.0.3",
+    "grunt-contrib-connect": "^2.0.0"
   }
 }
