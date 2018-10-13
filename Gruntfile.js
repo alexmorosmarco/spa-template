@@ -15,8 +15,17 @@ module.exports = function(grunt) {
           hostname: "*",
           port: 8000,
           base: 'src/app', // path to serve from
-          keepalive: true, // avoids the server from stopping after running all the Grunt tasks
+          keepalive: false, // true avoids the server from stopping after running all the Grunt tasks
+          livereload: true, // connects with the live reload server of task 'watch'
           open: true // opens a browser in the folder where the server is listening
+        }
+      }
+    },
+    watch: {
+      livereload: {
+        files: ['**/*.html'],
+        options: {
+          livereload: true
         }
       }
     }
@@ -24,10 +33,12 @@ module.exports = function(grunt) {
 
   // Load Grunt plugins
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Register and redefine tasks
+  grunt.registerTask('serve', ['gruntStart','connect','watch']);
   grunt.registerTask('gruntStart', 'Log Grunt has started.', function() {
     grunt.log.write('Grunfile started successfully!').ok();
   });
-  grunt.registerTask('default', ['gruntStart','connect']);
+  grunt.registerTask('default', ['serve']);
 };

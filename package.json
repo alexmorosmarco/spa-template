@@ -9,11 +9,12 @@
     "url": "https://github.com/alexmorosmarco/spa-template"
   },
   "scripts": {
-    "serve": "grunt connect",
+    "serve": "grunt serve",
     "default": "grunt default"
   },
   "devDependencies": {
     "grunt": "^1.0.3",
-    "grunt-contrib-connect": "^2.0.0"
+    "grunt-contrib-connect": "^2.0.0",
+    "grunt-contrib-watch": "^1.1.0"
   }
 }
