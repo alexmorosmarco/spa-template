@@ -1,5 +1,7 @@
 module.exports = function(grunt) {
 
+  var srcFolder = 'src/app';
+
   // Init Grunt tasks configuration
   grunt.initConfig({
     /**
@@ -14,7 +16,7 @@ module.exports = function(grunt) {
            */
           hostname: "*",
           port: 8000,
-          base: 'src/app', // path to serve from
+          base: srcFolder, // path to serve from
           keepalive: false, // true avoids the server from stopping after running all the Grunt tasks
           livereload: true, // connects with the live reload server of task 'watch'
           open: true // opens a browser in the folder where the server is listening
@@ -23,10 +25,11 @@ module.exports = function(grunt) {
     },
     watch: {
       livereload: {
-        files: ['**/*.html'],
         options: {
-          livereload: true
-        }
+          cwd: srcFolder, // current working directory
+          livereload: true // starts a live reload server that listens on file changes
+        },
+        files: ['**/*.html','**/*.js','**/*.css']
       }
     }
   });
