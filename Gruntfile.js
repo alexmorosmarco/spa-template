@@ -18,7 +18,7 @@ module.exports = function(grunt) {
           port: 8000,
           base: srcFolder, // path to serve from
           keepalive: false, // true avoids the server from stopping after running all the Grunt tasks
-          livereload: true, // connects with the live reload server of task 'watch'
+          livereload: true, // connects with the live reload server of the task 'watch'
           open: true // opens a browser in the folder where the server is listening
         }
       }
